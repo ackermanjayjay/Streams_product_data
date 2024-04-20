@@ -3,8 +3,7 @@
 
 ## DE Line workflow
 
-[workflow](4.png)
-
+![workflow](4.png)
 ## result
-[result](3.png)
+![result](3.png)
 
