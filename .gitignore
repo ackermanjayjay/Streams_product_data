@@ -1,0 +1,9 @@
+logs 
+
+ETL_data_product
+
+.mypy_cache
+
+dags\__pycache__
+
+plugins
