@@ -92,7 +92,7 @@ def insert_data():
 
 with DAG(
     default_args=default_args,
-    dag_id="dag_data_product_etl_to_table_v03",
+    dag_id="dag_data_product_etl_to_table_v04",
     start_date=datetime(2024, 4, 1),
     schedule_interval="@once",
 ) as dag:
@@ -115,5 +115,15 @@ with DAG(
         task_id="insert_to_table",
         python_callable=insert_data
     )
-    # task1 >> task2 >> task3
-    task1 >> task3
+    
+    # if double insert use this operators
+    # task4 = PostgresOperator(
+    #     task_id="delete_table",
+    #     postgres_conn_id="product_json",
+    #     sql="""
+    #     SELECT * FROM products
+    #     """
+    # )
+    # # task1 >> task2 >> task3
+    # task4
+    task3
